@@ -1,4 +1,4 @@
-function BP_obj = READ_BP_FILE( filename )
+function BP_obj = READ_BP_FILE( filename,DISPLAY)
 %READ_BP_FILES Summary of this function goes here
 %   Detailed explanation goes here
 % read BP files from csv files and save date into object BP
@@ -12,5 +12,8 @@ BP_obj.Posi_x=PosXm; %%x position m
 BP_obj.I_x=X; %% intensity of x
 BP_obj.Posi_y=PosYm; %%x position m
 BP_obj.I_y=Y; %% intensity of x
+[fitresultx, gof] = FIT_gaussian_fun(PosXm, X,DISPLAY);
+[fitresulty, gof] = FIT_gaussian_fun(PosYm, Y,DISPLAY);
+BP_obj.Gaussian_fit_x=fitresultx;
+BP_obj.Gaussian_fit_y=fitresulty;
 end
-

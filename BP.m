@@ -13,6 +13,8 @@ classdef BP
         I_x; %% intensity of x
         Posi_y; %%x position m
         I_y; %% intensity of x
+        Gaussian_fit_x;
+        Gaussian_fit_y;
     end
     
 %     methods
